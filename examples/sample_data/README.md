@@ -32,6 +32,6 @@ thesis's headline numbers — the full dataset (8 tickers × 4 resolutions,
 ## Getting the full dataset
 
 For the complete Databento-derived bars + engineered features + splits:
-see [`apexquant_data_release`](https://github.com/<USER>/apexquant-data-release)
-(placeholder URL). That repo includes the dataset card with licensing
-and redistribution terms.
+see the companion research repository at
+https://github.com/Heeeeeeliang/Applying-Deep-Time-Series-Learning-to-Stock-Forecasting-and-Quant-Trading.
+That repo includes the dataset card with licensing and redistribution terms.
