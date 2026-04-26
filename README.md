@@ -151,6 +151,26 @@ The research findings, ablation studies, and training notebooks that produced th
 
 https://github.com/Heeeeeeliang/Applying-Deep-Time-Series-Learning-to-Stock-Forecasting-and-Quant-Trading
 
+## Verifying the repository
+
+The Quickstart above runs the bundled demo. The full test
+suite is for reviewers and contributors verifying repo
+integrity end to end:
+
+```bash
+# Additional test-runner dependencies (not in the demo path)
+pip install pytest tabulate
+
+# Some preflight tests assert on real model checkpoints.
+# Stage the bundled samples into the runtime location:
+cp -r examples/sample_checkpoints/* models/
+
+# Run
+PYTHONPATH=. pytest tests/ -v
+```
+
+Expected on a fresh clone: `157 passed, 5 skipped, 2 xfailed`.
+
 ## Acknowledgement of Generative AI Use
 
 This project was developed with assistance from generative AI
