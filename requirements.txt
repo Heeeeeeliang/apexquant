@@ -5,9 +5,16 @@ lightgbm>=4.0
 # pandas-ta and similar dependencies. Re-evaluate
 # post-thesis.
 pandas>=2.0,<3
-numpy>=1.24
+# Upper bounds: scikit-learn, numpy, and pydantic have all
+# had major-version breaks recently (sklearn 1.8 removed
+# force_all_finite; numpy 2.0 removed np.product; pydantic
+# 1->2 was a rewrite). Pinning to current major to prevent
+# silent installation of a future incompatible release.
+# Re-evaluate post-thesis.
+numpy>=1.24,<3
+scikit-learn>=1.3,<2
+pydantic>=2.0,<3
 pandas-ta>=0.3
-scikit-learn>=1.3
 arch>=6.0
 matplotlib>=3.7
 plotly>=5.0
@@ -18,7 +25,6 @@ loguru>=0.7
 yfinance>=0.2
 scipy>=1.11
 tqdm>=4.0
-pydantic>=2.0
 python-dotenv>=1.0
 openai>=1.0
 anthropic>=0.20
