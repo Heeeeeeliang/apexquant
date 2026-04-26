@@ -1,0 +1,66 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "apexquant"
+version = "1.0.0"
+description = "A quant research platform built on a three-layer cascaded decomposition framework — designed in response to the ~50% directional-accuracy ceiling of direct price prediction."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { file = "LICENSE" }
+authors = [{ name = "Heliang Li" }]
+keywords = [
+    "quantitative-finance",
+    "algorithmic-trading",
+    "backtesting",
+    "machine-learning",
+    "deep-learning",
+    "time-series",
+    "lightgbm",
+    "cnn",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Office/Business :: Financial :: Investment",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dynamic = ["dependencies"]
+
+[project.urls]
+Homepage = "https://github.com/Heeeeeeliang/apexquant"
+Research = "https://github.com/Heeeeeeliang/Applying-Deep-Time-Series-Learning-to-Stock-Forecasting-and-Quant-Trading"
+Issues = "https://github.com/Heeeeeeliang/apexquant/issues"
+
+[tool.setuptools.dynamic]
+dependencies = { file = ["requirements.txt"] }
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = [
+    "analytics*",
+    "backtest*",
+    "compute*",
+    "config*",
+    "data*",
+    "diagnostics*",
+    "frontend*",
+    "llm*",
+    "pipeline*",
+    "predictors*",
+    "services*",
+    "strategies*",
+]
+exclude = ["tests*", "examples*", "models*", "results*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
