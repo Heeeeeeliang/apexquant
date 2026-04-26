@@ -523,7 +523,7 @@ def generate_predictions(
                         probs, index=vol_timestamps, name=adapter.output_label,
                     )
                     bar_probs = block_series.reindex(timestamps, method="ffill")
-                    bar_probs = bar_probs.fillna(method="bfill").fillna(0.5)
+                    bar_probs = bar_probs.bfill().fillna(0.5)
                     pred_columns[adapter.output_label] = bar_probs.values
                 else:
                     # Non-vol regressors: keep sigmoid (legacy behaviour)
@@ -611,7 +611,7 @@ def generate_predictions(
                         meta_series.index = meta_series.index.tz_localize(None)
 
                     bar_probs = meta_series.reindex(ts_notz, method="ffill")
-                    bar_probs = bar_probs.fillna(method="bfill").fillna(0.5)
+                    bar_probs = bar_probs.bfill().fillna(0.5)
                     pred_columns[adapter.output_label] = bar_probs.values
                 else:
                     pred_columns[adapter.output_label] = probs
