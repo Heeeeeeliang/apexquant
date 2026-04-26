@@ -1,0 +1,40 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ipynb_checkpoints/
+.venv/
+venv/
+env/
+.env
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+
+models/
+data/
+results/
+backtest/cache/
+logs/
+*.log
+*.pkl
+*.ckpt
+*.pt
+*.pth
+*.parquet
+*.npy
+*.h5
+
+# Bundled demo data + checkpoints — explicitly tracked so they survive
+# the blanket models/ and data/ ignores above, and the *.pt / *.joblib
+# suffix ignores, without turning those rules off globally.
+!examples/
+!examples/**
+!examples/sample_data/
+!examples/sample_data/**
+!examples/sample_checkpoints/
+!examples/sample_checkpoints/**
+
+.streamlit/secrets.toml

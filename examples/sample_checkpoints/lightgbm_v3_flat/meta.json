@@ -1,0 +1,10 @@
+{
+  "adapter": "lightgbm",
+  "output": "regression",
+  "output_label": "vol_prob_flat",
+  "approach": "regression",
+  "features": 119,
+  "metrics": {
+    "DA": 0.8364116094986808
+  }
+}

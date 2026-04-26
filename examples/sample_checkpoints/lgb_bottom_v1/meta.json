@@ -1,0 +1,13 @@
+{
+  "adapter": "lightgbm",
+  "output": "probability",
+  "output_label": "tp_bottom",
+  "task": "bottom",
+  "direction": "long",
+  "metrics": {
+    "base_wr": 0.3785361349582672,
+    "wr_at_0.45": 0.6454223394393921,
+    "wr_at_0.50": 0.7114731669425964,
+    "n_test": 6681
+  }
+}

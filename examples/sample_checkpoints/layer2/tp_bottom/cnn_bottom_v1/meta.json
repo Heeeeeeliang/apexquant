@@ -1,0 +1,5 @@
+{
+  "adapter": "multiscale_cnn",
+  "output_label": "tp_bottom_prob",
+  "name": "layer2_tp_bottom_cnn_bottom_v1"
+}
