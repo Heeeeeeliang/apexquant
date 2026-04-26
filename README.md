@@ -16,7 +16,6 @@ ApexQuant was built while validating a three-layer cascaded decomposition framew
 
 ![UI](docs/screenshot_dashboard.png)
 
-*Most useful screens to capture: Dashboard (model readiness + preflight), Backtest Analysis (verdict cards + equity curve), Strategy Editor (in-UI rule authoring).*
 
 ## Quickstart
 
