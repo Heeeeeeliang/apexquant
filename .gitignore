@@ -14,7 +14,19 @@ Thumbs.db
 *.swp
 
 models/
-data/
+# data/ is BOTH a runtime cache dir AND a Python source
+# package (51 source files import from it). Ignore runtime
+# artifacts only; preserve source code.
+data/**/*.csv
+data/**/*.parquet
+data/**/*.feather
+data/**/*.pkl
+data/**/*.h5
+data/**/*.npy
+data/cache/
+data/raw/
+data/processed/
+data/splits/
 results/
 backtest/cache/
 logs/
