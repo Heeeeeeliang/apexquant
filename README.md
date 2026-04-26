@@ -18,16 +18,84 @@ ApexQuant was built while validating a three-layer cascaded decomposition framew
 
 *Most useful screens to capture: Dashboard (model readiness + preflight), Backtest Analysis (verdict cards + equity curve), Strategy Editor (in-UI rule authoring).*
 
-## Quickstart — 60 seconds to a working backtest
+## Quickstart
+
+A step-by-step tutorial from a fresh clone to reading your first backtest report. Assumes Python is installed and you can use a terminal; no prior knowledge of this project is required.
+
+### Prerequisites
+
+- Python 3.10 or newer — check with `python --version`
+- git
+- About 4 GB of free disk space for the repo plus bundled sample data and checkpoints
+- Optional: a CUDA GPU for faster CNN inference — not required; the bundled demo runs on CPU in roughly 30 seconds
+
+### Step 1 — Clone the repo
 
 ```bash
 git clone https://github.com/Heeeeeeliang/apexquant.git
 cd apexquant
+```
+
+### Step 2 — Set up the environment
+
+Two options; pick whichever you're comfortable with.
+
+**Option A — pip (simpler, works everywhere):**
+
+```bash
+python -m venv venv
+source venv/bin/activate       # macOS/Linux
+venv\Scripts\activate          # Windows
 pip install -e .
+```
+
+**Option B — conda:**
+
+```bash
+conda env create -f environment.yml
+conda activate apexquant
+```
+
+Installation takes about 2–5 minutes depending on network speed.
+
+### Step 3 — Launch the app
+
+```bash
 python run_all.py --frontend
 ```
 
-The Streamlit UI opens at `http://localhost:8501`. The demo runs on the bundled 6-month AAPL + SPY sample (`examples/sample_data/`) with the `run9_trailstop` preset and produces roughly 84 trades over the sample window. Full-scale data (the 2020–2022 NASDAQ set behind the headline numbers) lives in the [companion research repo](https://github.com/Heeeeeeliang/Applying-Deep-Time-Series-Learning-to-Stock-Forecasting-and-Quant-Trading).
+Streamlit prints a local URL, usually `http://localhost:8501`, and the browser opens automatically. If it doesn't, copy the URL into your browser manually.
+
+You should land on the **Dashboard** page, which runs all six preflight checks automatically on load (Models, Data, Config, Dependencies, FeatureAlignment, VolProbDistribution). If any check is red, the check name tells you what's missing — see the Troubleshooting section below.
+
+### Step 4 — Run your first backtest
+
+Follow this click-path in the UI:
+
+1. In the left sidebar, click **Setup**.
+2. Expand the **Presets** panel near the top.
+3. Pick `run9_trailstop` from the preset picker — the config updates immediately (no separate Apply button).
+4. In the sidebar, click **Dashboard** to confirm the preflight health bar is still green.
+5. In the sidebar, click **Backtest Analysis**.
+6. Click **▶ Run AI Backtest**. Expected runtime: roughly 30 seconds on CPU, 15 seconds on GPU.
+
+### Step 5 — Read the results
+
+When the backtest finishes, the page fills out six tabs: **Overview**, **Per Ticker**, **Trade Log**, **Verdict & Attribution**, **Trade Markers**, **Diagnostics**.
+
+- **Overview** shows the headline numbers. Expected values on the bundled sample: roughly +2.2% total return, Sharpe 1.31, max drawdown −1.53%, 84 trades, win rate 52.4%. These are smaller-scale than the full-dataset numbers (+67.2% / Sharpe 2.14) because the demo uses only 6 months of AAPL + SPY.
+- **Verdict & Attribution** shows the GREEN/YELLOW/RED verdict card plus a per-layer attribution breakdown (which layer contributed to each trade: volatility gate → turning point → direction).
+- **Diagnostics** runs post-backtest scans — trade quality, equity shape, feature drift — and links to the standalone Diagnostics page for deeper views.
+
+### Step 6 (optional) — Try a different preset
+
+Two other presets ship with the repo: `run1_baseline` (no trail stop) and `run8_tranche_exit` (tranche-based exit). Same click-path — just pick a different preset at Step 4.3.
+
+### Troubleshooting
+
+- **Preflight shows "Models not found".** The bundled sample checkpoints live in `examples/sample_checkpoints/`. If the registry didn't pick them up, point the Setup page's `models_dir` to that path, or copy the folder's contents into `models/`.
+- **`run_all.py` exits immediately.** Check your Python version — the entry script requires 3.10 or newer.
+- **Port 8501 is already in use.** Launch Streamlit directly on a different port: `streamlit run frontend/app.py --server.port 8502`.
 
 ## How ApexQuant works
 
