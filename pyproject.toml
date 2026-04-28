@@ -8,7 +8,8 @@ version = "1.0.0"
 description = "A quant research platform built on a three-layer cascaded decomposition framework — designed in response to the ~50% directional-accuracy ceiling of direct price prediction."
 readme = "README.md"
 requires-python = ">=3.10"
-license = { file = "LICENSE" }
+license = "GPL-3.0-or-later"
+license-files = ["LICENSE"]
 authors = [{ name = "Heliang Li" }]
 keywords = [
     "quantitative-finance",
@@ -24,7 +25,7 @@ classifiers = [
     "Development Status :: 4 - Beta",
     "Intended Audience :: Developers",
     "Intended Audience :: Science/Research",
-    "License :: OSI Approved :: MIT License",
+    "License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)",
     "Operating System :: OS Independent",
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.10",

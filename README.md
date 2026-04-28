@@ -2,7 +2,7 @@
 
 A research platform for building and backtesting quantitative trading strategies with pluggable AI models.
 
-![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue) ![License MIT](https://img.shields.io/badge/license-MIT-green)
+![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue) ![License GPLv3](https://img.shields.io/badge/license-GPLv3-blue)
 
 ## What is ApexQuant
 
@@ -188,7 +188,11 @@ disclosure.
 
 ## License
 
-MIT. See [`LICENSE`](LICENSE).
+This repository is licensed under the **GNU General Public License v3.0** (GPLv3). See [`LICENSE`](LICENSE).
+
+ApexQuant imports [Backtrader](https://github.com/mementum/backtrader) (GPLv3+) at runtime as a backtest engine component. Per GPLv3 §5, the combined work must be distributed under GPL-compatible terms; this repository therefore adopts GPLv3 to maintain license consistency across the codebase and its dependencies.
+
+Bar-aggregated OHLCV market data redistributed in Release v1.0.0 is governed by Databento's historical-data policy (see [`data/README.md`](data/README.md) and [`NOTICE`](NOTICE)) — a separate licensing arrangement from the code license above.
 
 ## Citation
 
