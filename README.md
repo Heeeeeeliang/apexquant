@@ -4,6 +4,10 @@ A research platform for building and backtesting quantitative trading strategies
 
 ![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue) ![License GPLv3](https://img.shields.io/badge/license-GPLv3-blue)
 
+## Disclaimer
+
+ApexQuant is a research platform released for academic and educational use only. Nothing in this repository — including the bundled models, backtest results, equity curves, Sharpe ratios, or any other performance metric — constitutes investment, financial, legal, or tax advice, nor a recommendation to buy, sell, or hold any security. Backtested results are derived from historical data and are subject to look-ahead bias, survivorship bias, transaction-cost assumptions, and modelling error; **past performance is not indicative of future results**. The software is provided "as is" without warranty of any kind (see [`LICENSE`](LICENSE)). The author and contributors accept no liability for any loss or damage arising from use of this code or its outputs in live trading. Use at your own risk; consult a licensed financial professional before making investment decisions.
+
 ## What is ApexQuant
 
 Most quant-research pipelines are tangled one-offs: a notebook that trains a model, another notebook that backtests it, a third that produces charts, and every change to the data layer cascades through all three. ApexQuant separates those concerns. Train models wherever you like (Colab, a GPU box, a laptop) and save each one as a `weights` file plus a small `meta.json`. The platform auto-discovers the folder, picks the right adapter, runs inference, backtests a strategy against the signals, and produces reports.
