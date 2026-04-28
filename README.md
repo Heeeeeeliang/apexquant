@@ -192,7 +192,7 @@ This repository is licensed under the **GNU General Public License v3.0** (GPLv3
 
 ApexQuant imports [Backtrader](https://github.com/mementum/backtrader) (GPLv3+) at runtime as a backtest engine component. Per GPLv3 §5, the combined work must be distributed under GPL-compatible terms; this repository therefore adopts GPLv3 to maintain license consistency across the codebase and its dependencies.
 
-Bar-aggregated OHLCV market data redistributed in Release v1.0.0 is governed by Databento's historical-data policy (see [`data/README.md`](data/README.md) and [`NOTICE`](NOTICE)) — a separate licensing arrangement from the code license above.
+Bar-aggregated OHLCV market data redistributed alongside this codebase is governed by Databento's historical-data policy. See the [data card](https://github.com/Heeeeeeliang/Applying-Deep-Time-Series-Learning-to-Stock-Forecasting-and-Quant-Trading/blob/main/data/README.md) and [NOTICE](https://github.com/Heeeeeeliang/Applying-Deep-Time-Series-Learning-to-Stock-Forecasting-and-Quant-Trading/blob/main/NOTICE) in the research repository for full attribution — a separate licensing arrangement from the code license above.
 
 ## Citation
 
@@ -205,7 +205,7 @@ Bar-aggregated OHLCV market data redistributed in Release v1.0.0 is governed by 
 }
 ```
 
-A machine-readable form is in `CITATION.cff`.
+A machine-readable form is available as [CITATION.cff in the research repository](https://github.com/Heeeeeeliang/Applying-Deep-Time-Series-Learning-to-Stock-Forecasting-and-Quant-Trading/blob/main/CITATION.cff).
 
 ## Acknowledgements
 
