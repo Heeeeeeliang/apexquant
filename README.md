@@ -181,9 +181,7 @@ This project was developed with assistance from generative AI
 tools. Claude Code (Anthropic) was used to assist with
 implementation tasks: generating boilerplate, writing tests,
 diagnosing bugs, and producing repository reproducibility
-audits. Claude (Anthropic, web/desktop) was used as a
-discussion partner for architectural decisions and for prompt
-engineering. All generated code was reviewed, tested, and
+audits. All generated code was reviewed, tested, and
 integrated by the author. The research design, the three-layer
 cascaded framework, the empirical findings, the model
 architectures, and all results are the author's original work.
